@@ -4,7 +4,7 @@ from fastapi.staticfiles import StaticFiles
 from pymongo import MongoClient
 import uvicorn
 from router import router
-from hooks import shutdown, startup
+from hendler.event_hendlers import shutdown, startup
 
 from loader.import_data import import_user_accounts, import_messages
 

@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from elasticsearch import AsyncElasticsearch
 from fastapi import Depends
 
-from .elasticsearch_utils import elasticsearch_client, get_elasticsearch_client
+from search_engine.elasticsearch_utils import elasticsearch_client, get_elasticsearch_client
 from models.user import User, UserUpdate
 from models.message import Tweet, TweetUpdate
 

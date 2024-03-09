@@ -8,12 +8,11 @@ from models.message import Tweet, TweetUpdate
 
 from pymemcache import HashClient
 from memcache import get_memcached_client
-from repository import Users, Messages
-from search_engine.search_repository import UserSearchRepository, MessageSearchRepository
+from repository.mongo_repository import Users, Messages
+from repository.search_repository import UserSearchRepository, MessageSearchRepository
 from utils import tweet_struct_update, user_struct_update
 
 router = APIRouter()
-
 
 @router.get("/get_all_users")
 async def get_all_users(users: Users = Depends(Users.get_instance)) -> list[User]:
